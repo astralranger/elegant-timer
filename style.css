@@ -13,7 +13,7 @@ body {
     background-color: #ffffff; /* Set background color to white */
 }
 
-/* New container for timer without background */
+/* Timer container with fixed height */
 .timer-container {
     position: relative;
     z-index: 1; /* Ensure timer is above the background */
@@ -21,6 +21,7 @@ body {
     padding: 20px; /* Add some padding */
     border-radius: 15px; /* Add rounded corners */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    height: 400px; /* Set a fixed height for the container */
 }
 
 h1 {
@@ -39,32 +40,75 @@ h1 {
     font-family: 'Orbitron', sans-serif; /* Change font for the timer display */
 }
 
+.current-date {
+    font-size: 1.5rem; /* Adjust size for current date */
+    color: #333; /* Dark text color */
+    margin-top: 10px; /* Space above the date */
+    font-family: 'Orbitron', sans-serif; /* Change font for current date */
+    position: absolute; /* Position absolute to place it in a specific spot */
+    bottom: 60px; /* Space from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center align horizontally */
+}
+
+.current-time {
+    font-size: 1.5rem; /* Adjust size for current time */
+    color: #333; /* Dark text color */
+    margin-top: 20px; /* Added margin above current time */
+    font-family: 'Orbitron', sans-serif; /* Change font for current time */
+    position: absolute; /* Position absolute to place it at the bottom of the container */
+    bottom: 20px; /* Space from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center align horizontally */
+}
+
 .controls {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px; /* Increased gap for aesthetics */
+    margin-top: 20px; /* Added margin above buttons */
 }
 
 button {
-    padding: 10px 20px;
+    padding: 15px 30px; /* Increase padding for larger buttons */
     font-size: 1.2rem; /* Slightly larger font size for buttons */
-    color: white;
-    background-color: #3498db;
+    color: black; /* Change text color to black */
     border: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Rounded buttons */
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for smooth effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    font-family: 'Orbitron', sans-serif; /* Set the same font for buttons */
 }
 
-button:hover {
-    background-color: #2980b9;
+/* Button styles for each action */
+button.start {
+    background: linear-gradient(90deg, #4caf50, #81c784); /* Gradient for Start button */
 }
 
-button:active {
-    transform: scale(0.98);
+button.start:hover {
+    background: linear-gradient(90deg, #45a049, #76c7a0); /* Darker gradient on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+button.pause {
+    background: linear-gradient(90deg, #f44336, #ef5350); /* Gradient for Pause button */
+}
+
+button.pause:hover {
+    background: linear-gradient(90deg, #d32f2f, #e57373); /* Darker gradient on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+button.reset {
+    background: linear-gradient(90deg, #2196f3, #64b5f6); /* Gradient for Reset button */
+}
+
+button.reset:hover {
+    background: linear-gradient(90deg, #1976d2, #42a5f5); /* Darker gradient on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
 }
 
 button:focus {
-    outline: none;
+    outline: none; /* Remove outline */
 }
-
