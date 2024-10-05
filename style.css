@@ -10,14 +10,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #00C9FF, #92FE9D);
+    background-image: url('background.jpg'); /* Replace with your image name */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    filter: blur(5px); /* Apply blur effect to the background */
 }
 
-.container {
-    background-color: white;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+/* New container for timer without background */
+.timer-container {
+    position: relative;
+    z-index: 1; /* Ensure timer is above the blurred background */
     text-align: center;
 }
 
@@ -28,10 +32,11 @@ h1 {
 }
 
 .timer-display {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #2c3e50;
+    font-size: 4rem; /* You can adjust the size */
+    font-weight: bolder; /* Make the font bolder */
+    color: #ffffff; /* Change to white for better visibility */
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for better visibility */
 }
 
 .controls {
