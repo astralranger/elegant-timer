@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elegant Timer</title>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'> <!-- Add this line -->
+    <title>24 Hour Timer</title>
 </head>
 <body>
     <div class="timer-container">
-        <h1>Elegant Timer</h1>
-        <div class="timer-display" id="timer">00:00:00</div>
+        <h1>Timer</h1>
+        <div id="timer-display" class="timer-display">00:00:00</div>
+        <div id="current-date" class="current-date"></div> <!-- New div for the date -->
         <div class="controls">
-            <button onclick="startTimer()">Start</button>
-            <button onclick="pauseTimer()">Pause</button>
-            <button onclick="resetTimer()">Reset</button>
+            <button class="start" onclick="startTimer()">Start</button>
+            <button class="pause" onclick="stopTimer()">Stop</button>
+            <button class="reset" onclick="resetTimer()">Reset</button>
         </div>
+        <div id="current-time" class="current-time"></div>
     </div>
     <script src="script.js"></script>
 </body>
